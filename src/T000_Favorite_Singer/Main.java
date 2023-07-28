@@ -13,13 +13,13 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());
-        int[] song = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        long[] song = Arrays.stream(br.readLine().split(" ")).mapToLong(Long::parseLong).toArray();
 
-        Map<Integer, Integer> singerNumber = new HashMap<>();
+        Map<Long, Long> singerNumber = new HashMap<>();
         for (int i = 0; i < song.length; i++) {
-            int currSong = song[i];
+            long currSong = song[i];
 
-            singerNumber.putIfAbsent(currSong, 0);
+            singerNumber.putIfAbsent(currSong, 0L);
 
             if (singerNumber.containsKey(currSong)) {
                 singerNumber.put(currSong, singerNumber.get(currSong) + 1);
@@ -27,15 +27,15 @@ public class Main {
 
         }
 
-        int topSinger = 0;
-        int count = 0;
+        Long topSinger = 0L;
+        Long count = 0L;
 
-        for (Map.Entry<Integer, Integer> set : singerNumber.entrySet()) {
-            Integer currValue = set.getValue();
+        for (Map.Entry<Long, Long> set : singerNumber.entrySet()) {
+            Long currValue = set.getValue();
 
             if (currValue > topSinger) {
                 topSinger = currValue;
-                count = 1;
+                count = 1L;
             } else if (currValue == topSinger) {
                 count++;
             }
