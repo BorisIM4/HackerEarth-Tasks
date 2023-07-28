@@ -1,10 +1,10 @@
-package T001_Read_Write_Console;
+package Basic_Programming.Input_Output;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main {
+public class Tutorial {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
