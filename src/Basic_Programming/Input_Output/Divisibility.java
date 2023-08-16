@@ -19,7 +19,7 @@ public class Divisibility {
                 .mapToInt(Integer::parseInt)
                 .toArray();
 
-        String test = "";
+        String numberAsString = "";
 
         for (int i = 0; i < array.length; i++) {
             int currentNumber = array[i];
@@ -27,11 +27,11 @@ public class Divisibility {
             int lastDigitDigit = Math.abs(currentNumber) % 10;
             String lastDigitAsString = String.valueOf(lastDigitDigit);
 
-            test = test.concat(lastDigitAsString);
+            numberAsString = numberAsString.concat(lastDigitAsString);
         }
 
 
-        BigInteger numberAsBigInt = new BigInteger(test);
+        BigInteger numberAsBigInt = new BigInteger(numberAsString);
 
         BigInteger modAsBigInt = BigInteger.valueOf(10);
 
